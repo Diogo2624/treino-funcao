@@ -20,32 +20,41 @@ def contador(numero):                           #Função que conta de 1 até o 
         print(f"contando: {n}")
 
 # Aqui eu crio uma varável para pedir ao usuário qual função ele vai utilizar.
+def opcao():
+    opcao = input("Digite o que deseja executar, 1 para boas-vindas, 2 para dobro, 3 para verificar paridade, 4 para área do retângulo, 5 para contador: ")
 
-opcao = input("Digite o que deseja executar, 1 para boas-vindas, 2 para dobro, 3 para verificar paridade, 4 para área do retângulo, 5 para contador: ")
+    if opcao == '1':                                        
+        nome = input("Digite seu nome: ")
+        boas_vindas(nome)
 
-if opcao == '1':                                        
-    nome = input("Digite seu nome: ")
-    boas_vindas(nome)
+    elif opcao == '2':
+        numero = int(input("Digite um número inteiro para saber o seu dobro: "))
+        dobro(numero)
+        print(f"O dobro de {numero} é {dobro(numero)}")
 
-elif opcao == '2':
-    numero = int(input("Digite um número inteiro para saber o seu dobro: "))
-    dobro(numero)
-    print(f"O dobro de {numero} é {dobro(numero)}")
+    elif opcao == '3':
+        numero = int(input("Digite um número inteiro para verificar se é par: "))
+        eh_par(numero)
+        print(f"{eh_par(numero)}")
 
-elif opcao == '3':
-    numero = int(input("Digite um número inteiro para verificar se é par: "))
-    eh_par(numero)
-    print(f"{eh_par(numero)}")
+    elif opcao == '4':
+        base = float(input("Digite a base do retângulo: "))
+        altura = float(input("Digite a altura do retângulo: "))
+        area_retangulo(base, altura)
+        print(f"A área do retângulo é {area_retangulo(base, altura)}")
 
-elif opcao == '4':
-    base = float(input("Digite a base do retângulo: "))
-    altura = float(input("Digite a altura do retângulo: "))
-    area_retangulo(base, altura)
-    print(f"A área do retângulo é {area_retangulo(base, altura)}")
+    elif opcao == '5':
+        numero = int(input("Digite um número para contar até ele: "))
+        contador(numero)
 
-elif opcao == '5':
-    numero = int(input("Digite um número para contar até ele: "))
-    contador(numero)
+    else:
+        print("Opção inválida. Por favor, escolha uma opção válida.")
+    
+continuar = input("Deseja continuar usando as funções? (s/n): ")
+if continuar.lower() != 's':
+    print("Obrigado por usar o programa!")
+    exit()
 
-else:
-    print("Opção inválida. Por favor, escolha uma opção válida.")
+# Aqui vamos criar um loop para o usuário poder continuar utilizando as funções.
+while True:
+    opcao()
