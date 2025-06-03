@@ -49,12 +49,25 @@ def opcao():
 
     else:
         print("Opção inválida. Por favor, escolha uma opção válida.")
+
+opcao()
+
+while True:
+    continuar = input("Deseja continuar? (s/n) ").lower()
+    if continuar == "s":
+        opcao()
+    elif continuar == "n":
+        print("Obrigado por usar o programa, saindo...")
+        break
+    else:
+        print("Por-favor, selecione uma opção válida.")
+
+
+
+
+
     
-continuar = input("Deseja continuar usando as funções? (s/n): ")
-if continuar.lower() != 's':
-    print("Obrigado por usar o programa!")
-    exit()
+
 
 # Aqui vamos criar um loop para o usuário poder continuar utilizando as funções.
-while True:
-    opcao()
+
